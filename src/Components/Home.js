@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import List from './List'
 import {filterPrice,filterFloor} from '../Redux/action'
+import { Redirect } from 'react-router-dom'
 
 
 class Home extends React.Component {
@@ -25,6 +26,7 @@ class Home extends React.Component {
    }
 
    render(){
+       if(this.props.isLoggedIn){
         return (
             <div className='container'>
                 <div className='d-flex'>
@@ -50,7 +52,16 @@ class Home extends React.Component {
                 </div>
             </div>
         )
+       }else{
+            return <Redirect to='/login' />
+       }
    }
+}
+
+const mapStateToProps = state => {
+    return {
+        isLoggedIn:state.isLoggedIn
+    }
 }
 
 const mapDispatchToProps = dispatch =>{
@@ -60,4 +71,4 @@ const mapDispatchToProps = dispatch =>{
     }
 }
 
-export default connect(null,mapDispatchToProps)(Home)  
+export default connect(mapStateToProps,mapDispatchToProps)(Home)  
