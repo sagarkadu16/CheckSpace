@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import List from './List'
 import {filterPrice,filterFloor} from '../Redux/action'
 import { Redirect } from 'react-router-dom'
+import Search from './Search'
 
 
 class Home extends React.Component {
@@ -14,41 +15,42 @@ class Home extends React.Component {
        }
    }
 
-   handleChange = e =>{
+   handlePriceChange = e =>{
        this.setState({
            [e.target.name] : e.target.value
        })
+       this.props.filterPrice(e.target.value)
    }
 
-   handleClick = () =>{
-        this.props.filterFloor(this.state.floor)
-        this.props.filterPrice(this.state.price)
+   handleFloorChange = e => {
+        this.setState({
+            [e.target.name] : e.target.value
+        })
+        this.props.filterFloor(e.target.value)
    }
 
    render(){
        if(this.props.isLoggedIn){
         return (
             <div className='container'>
-                <div className='d-flex'>
-                    Search By:
-                    <button className='btn btn-success btn-sm mx-2'>Available</button>
+                <div className='d-flex my-2 bg-light p-4'>
                     Filter By: 
-                    <select className='mx-2' name='price' value={this.state.price} onChange={this.handleChange}>
+                    <select className='mx-2' name='price' value={this.state.price} onChange={this.handlePriceChange}>
                         <option value='none'>Price</option>
                         <option value='lotohi'>Low To High</option>
                         <option value='hitolo'>High To Low</option>
                     </select>
-                    <select className='mx-2' name='floor' value={this.state.floor} onChange={this.handleChange}>
-                        <option value='none'>Floor</option>
+                    <select className='mx-2' name='floor' value={this.state.floor} onChange={this.handleFloorChange}>
+                        <option value='none'>All Floor</option>
                         <option value='1'>First</option>
                         <option value='2'>Second</option>
                         <option value='3'>Third</option>
-                        <option value='4'>Fourth</option>
+                        <option value='4'>Fourth</option>   
                     </select>
-                    <button className='btn btn-primary btn-sm' onClick={this.handleClick}>Submit</button>
                 </div>
-                <div className='w-50 '>
-                    <List />
+                <Search />
+                <div className='border d-flex flex-wrap justify-content-around'>
+                    <List {...this.props} />
                 </div>
             </div>
         )
@@ -67,7 +69,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch =>{
     return {
         filterPrice: value => dispatch(filterPrice(value)),
-        filterFloor: value => dispatch(filterFloor(value))
+        filterFloor: value => dispatch(filterFloor(value)),
     }
 }
 

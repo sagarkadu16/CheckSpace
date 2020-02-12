@@ -15,9 +15,10 @@ export const registerUser = inp =>{
 }
 
 export const registerSuccess = (res) =>{
-    console.log('isregister success')
+    console.log('register call success',res)
     return {
-        type:register_success
+        type:register_success,
+        res
     }
 }
 
@@ -35,7 +36,7 @@ export const loginUser = inp =>{
 }
 
 export const loginSuccess = res =>{
-    console.log(res)
+    // console.log(res)
     return {
         type:login_success,
         res
@@ -64,4 +65,40 @@ export const filterFloor = value =>{
 }
 
 
+//------------- check availability according to date
+export const check_available = 'check_available'
 
+export const checkAvailability = (start,end) => {
+    return {
+        type:check_available,
+        start,end
+    }
+}
+
+export const book_room = 'book_room'
+
+export const bookRoom = id => {
+    return{
+        type: book_room,
+        id
+    }
+}
+
+
+export const confirm_order = 'confirm_order'
+
+export const confirmOrder =( pack,id) =>{
+    return {
+        type:confirm_order,
+        pack,id
+    }
+}
+
+
+export const user_logout = 'user_logout'
+
+export const logout = () =>{
+    return {
+        type:user_logout
+    }
+}

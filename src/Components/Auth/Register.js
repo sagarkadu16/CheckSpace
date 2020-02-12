@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { registerUser } from '../../Redux/action'
-import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Register extends Component {
     constructor(props){
@@ -32,15 +32,20 @@ class Register extends Component {
             password: this.state.password
         }
         this.props.saveUser(info)
+        console.log(this.props.isRegistered)
     }
 
 
-    render() {
-        if(this.props.isRegistered){
-            return <Redirect to='/login'/>
-        }else{
+    render() {  
             return (
                 <div className='container w-25'>
+                    <p className='text-danger'>{this.props.warningText}</p>
+                    {this.props.isRegistered && <div className="alert alert-success" role="alert">
+                        User Registered Successfully!
+                        <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>}
                     <form onSubmit={this.handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">name:</label>
@@ -68,15 +73,17 @@ class Register extends Component {
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
+                    <Link to='/login'>Login Page</Link>
                 </div>
             )
-        }
+        
     }
 }
 
 const mapStateToProps = state => {
     return {
-        isRegistered : state.isRegisterSuccess
+        isRegistered : state.isRegisterSuccess,
+        warningText : state.warningText
     }
 }
 

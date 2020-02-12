@@ -1,25 +1,27 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {Link} from 'react-router-dom'
 import style from './list.module.css'
+import {bookRoom} from '../Redux/action'
 
 class List extends Component {
-        constructor(props){
-            super(props)
+        
+        handleBooking = room =>{
+            this.props.bookRoom(room.id)
+            this.props.history.push(`/rooms/${room.id}/booking`)
         }
+
         render(){
-            console.log(this.props.displayData)
             return(
                         this.props.rooms.map(room =>
-                            <div key={room.id} className="card w-75 m-2 shadow " style={{width: "8rem"}}>
-                                <img src="https://via.placeholder.com/300C/O https://placeholder.com/ " className={`card-img-top img-fluid ${style.img}`} alt="placeholder" />
+                            <div key={`${Math.random()}${room.id}`} className="card m-2 shadow-sm " style={{width: "20rem" ,height:"28rem"}}>
+                                <img src={room.img} className={`card-img-top img-fluid ${style.img}`} alt="placeholder" />
                                 <div className="card-body">
-                                <h5 className="card-title">Title:{room.name}</h5>
-                                <h5 className="card-title">Floor:{room.floor}</h5>
-                                <h5 className="card-title">Price:{room.price}</h5>
-                                <h5 className="card-title">Capacity:{room.capacity}</h5>
-                                <h5 className="card-title">Capacity:{(room.status)?'Available':'Not Available'}</h5>
-                                <Link to='#' className="btn btn-primary">Book</Link>
+                                    <p className="m-1">Title:{room.name}</p>
+                                    <p className="m-1">Floor:{room.floor} </p>
+                                    <p className="m-1">Price (₹) /day: {room.price}</p>
+                                    <p className="m-1">Capacity:{room.capacity}</p>
+                                    {/* <li className={`list-group-item ${(room.status)?'text-success':'text-danger'}`}>{(room.status)?'Available':'Booked'}</li> */}
+                                    <button  className="btn btn-primary m-1" onClick={()=>this.handleBooking(room)}>Book</button>
                                 </div>
                             </div>
                     )
@@ -33,4 +35,10 @@ const mapStateToProps = state =>{
     }
 }
 
-export default connect(mapStateToProps)(List)
+const mapDispatchToProps = dispatch =>{
+    return {
+        bookRoom: value => dispatch(bookRoom(value))
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(List)

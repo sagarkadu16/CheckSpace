@@ -1,7 +1,11 @@
 .ele{
-    margin: 8px 30px;
+    margin: 5px 30px;
 }
 
 .box{
     margin-bottom: 5px;
+}
+
+.back{
+    background-color: #b1afc7;
 }

@@ -24,13 +24,13 @@ class Login extends Component {
             "username": this.state.username,
             "password": this.state.password
         }
-        console.log(info)
+        // console.log(info)
         this.props.loginUser(info)
     }
 
     render() {
         if(this.props.isLoggedIn){
-            return <Redirect to='/home' />
+            return <Redirect to='/' />
         }else{
             return (
                 <div className='container w-25'>
