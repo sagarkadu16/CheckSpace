@@ -33,7 +33,7 @@ class Home extends React.Component {
        if(this.props.isLoggedIn){
         return (
             <div className='container'>
-                <div className='d-flex my-2 bg-light p-4'>
+                <div className='d-flex my-2 bg-light p-4 border'>
                     Filter By: 
                     <select className='mx-2' name='price' value={this.state.price} onChange={this.handlePriceChange}>
                         <option value='none'>Price</option>
@@ -49,7 +49,7 @@ class Home extends React.Component {
                     </select>
                 </div>
                 <Search />
-                <div className='border d-flex flex-wrap justify-content-around'>
+                <div className='d-flex flex-wrap justify-content-around'>
                     <List {...this.props} />
                 </div>
             </div>

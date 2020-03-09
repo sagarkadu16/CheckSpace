@@ -27,12 +27,14 @@ export const login_success = 'loginSuccess'
 
 export const loginUser = inp =>{
     console.log(inp)
-    return dispatch =>{
-        return Axios.post('http://localhost:8080/auth/login',inp)
-            .then(res => dispatch(loginSuccess(res)))
-            .catch(err => console.log(err))
-            .finally(res => console.log('login success'))
-    }
+    return dispatch => dispatch(loginSuccess())
+
+    // return dispatch =>{
+    //     return Axios.post('http://localhost:8080/auth/login',inp)
+    //         .then(res => dispatch(loginSuccess(res)))
+    //         .catch(err => console.log(err))
+    //         .finally(res => console.log('login success'))
+    // }
 }
 
 export const loginSuccess = res =>{

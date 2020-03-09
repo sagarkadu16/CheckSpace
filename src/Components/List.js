@@ -14,7 +14,7 @@ class List extends Component {
             return(
                         this.props.rooms.map(room =>
                             <div key={`${Math.random()}${room.id}`} className="card m-2 shadow-sm " style={{width: "20rem" ,height:"28rem"}}>
-                                <img src={room.img} className={`card-img-top img-fluid ${style.img}`} alt="placeholder" />
+                                <div className='hover-effect'><img src={room.img} className={`card-img-top img-fluid ${style.img}`} alt="placeholder" /></div>
                                 <div className="card-body">
                                     <p className="m-1">Title:{room.name}</p>
                                     <p className="m-1">Floor:{room.floor} </p>

@@ -25,8 +25,9 @@ export default class OrderConfirm extends Component {
     render(){
         return (
             <div className='text-center'>
-                <h1 className='text-success'>Congratulations !!!</h1>
-                <p className='text-success'>Your Order is confirmed</p>
+                <h1 className='text-success'>Booking is confirmed !!!</h1>
+                <h5 className='text-success'> Thank you for booking with 'CheckSpace'</h5>
+                <p className='text-success'> Redirecting you to meeting room list</p>
             </div>
         )
     }

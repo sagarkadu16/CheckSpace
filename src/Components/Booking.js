@@ -34,7 +34,7 @@ class Booking extends Component {
         
 
         return (
-            <div className='container bg-light p-2' key={this.props.room.id}>
+            <div className='container bg-light p-2 border shadow-sm' key={this.props.room.id}>
                 <div className='row'>
                     <div className='col-md-6 text-center col-12'>
                         <img src ={this.props.room.img} alt='placeholder' className='img-fluid'></img>

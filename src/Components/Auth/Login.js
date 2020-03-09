@@ -26,6 +26,7 @@ class Login extends Component {
         }
         // console.log(info)
         this.props.loginUser(info)
+
     }
 
     render() {
@@ -35,13 +36,14 @@ class Login extends Component {
             return (
                 <div className='container w-25'>
                     <form onSubmit={this.handleSubmit}>
+                        <h3>Login:</h3>
                         <div className="form-group">
                             <label htmlFor="username">Username:</label>
-                            <input type="text" className="form-control" name='username' value={this.state.username} onChange={this.handleChange} id="username" aria-describedby="emailHelp" />
+                            <input type="text" className="form-control" name='username' placeholder='test' value={this.state.username} onChange={this.handleChange} id="username" aria-describedby="emailHelp" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="password">Password</label>
-                            <input type="password" name='password' value={this.state.password} onChange={this.handleChange}  className="form-control" id="password" />
+                            <input type="password" name='password' value={this.state.password} placeholder='password' onChange={this.handleChange}  className="form-control" id="password" />
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>

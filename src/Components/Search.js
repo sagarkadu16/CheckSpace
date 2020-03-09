@@ -31,14 +31,14 @@ class Search extends Component {
 
     render(){
         return (
-            <div className='my-2  bg-light p-2'>
+            <div className='my-2  bg-light p-2 border'>
                 Search By Date:
                 <div className='d-flex my-2'>
                         Start Date:
-                        <input id='start' min="2020-02-11" max="2020-02-29" onChange={this.handleStart} type='date' className='mx-2'></input>
+                        <input id='start' min="2020-03-10" max="2020-04-30" onChange={this.handleStart} type='date' className='mx-2'></input>
                     
                         End Date:
-                        <input id='end'  min="2020-02-11" max="2020-02-29" onChange={this.handleEnd} type='date' className='mx-2'></input>
+                        <input id='end'  min="2020-03-10" max="2020-04-30" onChange={this.handleEnd} type='date' className='mx-2'></input>
                     
                         <button className='btn btn-info btn-sm' onClick={this.handleClick}>Check</button>
                 </div>

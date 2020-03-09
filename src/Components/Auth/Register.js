@@ -47,16 +47,17 @@ class Register extends Component {
                         </button>
                     </div>}
                     <form onSubmit={this.handleSubmit}>
+                        <h3>Register:</h3>
                         <div className="form-group">
-                            <label htmlFor="name">name:</label>
+                            <label htmlFor="name">Name:</label>
                             <input type="text" className="form-control" name='name' value={this.state.value} onChange={this.handleChange} id="name" aria-describedby="emailHelp" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="email">email:</label>
+                            <label htmlFor="email">Email:</label>
                             <input type="email" className="form-control" name='email' value={this.state.value} onChange={this.handleChange} id="email" aria-describedby="emailHelp" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="mobile">mobile:</label>
+                            <label htmlFor="mobile">Mobile:</label>
                             <input type="number" className="form-control" name='mobile' value={this.state.value} onChange={this.handleChange} id="email" aria-describedby="emailHelp" />
                         </div>
                         <div className="form-group">
@@ -68,7 +69,7 @@ class Register extends Component {
                             <input type="password" name='password' value={this.state.value} onChange={this.handleChange}  className="form-control" id="password" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="desc">description</label>
+                            <label htmlFor="desc">Description</label>
                             <input type="textarea" name='desc' value={this.state.value} onChange={this.handleChange}  className="form-control" id="password" />
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>

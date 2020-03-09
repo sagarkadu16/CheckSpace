@@ -6,10 +6,10 @@ const initialState = {
         {  
             id:1,
             floor:1,
-            img:"https://barnescreativestudios.com/wp-content/uploads/2020/01/studio3-400x230.jpg",
+            img:"https://lh3.googleusercontent.com/proxy/AMV6HHq_mV5lbko5ecIgeLeZcZmIcxsssoqvj5vu33u5ev4zfftHjsSRfTsI5SRBJUEveYtOOMDp1Lsrg_T0AXQCOeJcWw5NWq5zmpukimer6a_sSq8",
             name:'hercules',
             capacity:4,
-            price:1000,
+            price:800,
             bookingLog:[],
             status:true
         },
@@ -28,8 +28,8 @@ const initialState = {
             floor:2,
             img:"https://barnescreativestudios.com/wp-content/uploads/2020/01/studio3-400x230.jpg",
             name:'Gather',
-            capacity:3,
-            price:1300,
+            capacity:8,
+            price:2000,
             bookingLog:[],
             status:true
         },
@@ -52,6 +52,16 @@ const initialState = {
             price:5000,
             bookingLog:[],
             status:false
+        },
+        {  
+            id:6,
+            floor:3,
+            img:"https://lh3.googleusercontent.com/proxy/AMV6HHq_mV5lbko5ecIgeLeZcZmIcxsssoqvj5vu33u5ev4zfftHjsSRfTsI5SRBJUEveYtOOMDp1Lsrg_T0AXQCOeJcWw5NWq5zmpukimer6a_sSq8",
+            name:'hercules',
+            capacity:10,
+            price:3000,
+            bookingLog:[],
+            status:true
         }
     ],
     isLoggedIn:false,
@@ -64,10 +74,10 @@ const initialState = {
         {  
             id:1,
             floor:1,
-            img:"https://barnescreativestudios.com/wp-content/uploads/2020/01/studio3-400x230.jpg",
+            img:"https://lh3.googleusercontent.com/proxy/AMV6HHq_mV5lbko5ecIgeLeZcZmIcxsssoqvj5vu33u5ev4zfftHjsSRfTsI5SRBJUEveYtOOMDp1Lsrg_T0AXQCOeJcWw5NWq5zmpukimer6a_sSq8",
             name:'hercules',
             capacity:4,
-            price:1000,
+            price:800,
             status:true
         },
         {
@@ -86,8 +96,8 @@ const initialState = {
             floor:2,
             img:"https://barnescreativestudios.com/wp-content/uploads/2020/01/studio3-400x230.jpg",
             name:'Gather',
-            capacity:3,
-            price:1300,
+            capacity:8,
+            price:2000,
             From:'',
             To:'',
             status:true
@@ -113,6 +123,16 @@ const initialState = {
             From:'',
             To:'',
             status:false
+        },
+        {  
+            id:6,
+            floor:3,
+            img:"https://lh3.googleusercontent.com/proxy/AMV6HHq_mV5lbko5ecIgeLeZcZmIcxsssoqvj5vu33u5ev4zfftHjsSRfTsI5SRBJUEveYtOOMDp1Lsrg_T0AXQCOeJcWw5NWq5zmpukimer6a_sSq8",
+            name:'hercules',
+            capacity:10,
+            price:3000,
+            bookingLog:[],
+            status:true
         }
     ],
     warningText:'',
@@ -136,7 +156,8 @@ const reducer = (state = initialState, action) =>{
         case login_success:
             return {...state,
                     isLoggedIn:true,
-                    currentToken:action.res.data.token
+                    currentToken:'Eslx1254'
+                    // currentToken:action.res.data.token || 'Eslx1254'
                 }
         case filter_floor:
             console.log(Number(action.value))
@@ -236,7 +257,8 @@ const reducer = (state = initialState, action) =>{
         case user_logout:
             return {
                 ...state,
-                isLoggedIn : !state.isLoggedIn
+                isLoggedIn : !state.isLoggedIn,
+                currentToken:''
             }
         default:
             return state
