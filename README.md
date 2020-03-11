@@ -9,8 +9,9 @@ Project Link: https://check-space-sagar.netlify.com/
 ![Checklist-feature-2](./public/animations/check2.gif)
 
 Project Description:
+
 'Check Space' is Meeting room booking app with below feature:
-    > User can select start and end date to book particular meeting room and same room cannot be booked again in that range
-    > User Can able to book meeting room based on price,capacity,floor
+    - User can select start and end date to book particular meeting room and same room cannot be booked again in that range
+    - User Can able to book meeting room based on price,capacity,floor
 
 Used Stack: React,Redux,Css,Bootstrap,Html
