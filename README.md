@@ -3,10 +3,10 @@ Project Name: 'CheckSpace'
 Project Link: https://check-space-sagar.netlify.com/
 
 1)User is able to sort meeting rooms based on floors and price-range
-![Checklist-feature-1](check-space/public/animations/check1.gif)
+![Checklist-feature-1](./public/animations/check1.gif)
 
 2)User is able to book meeting room based on start and end date and can view booking history.
-![Checklist-feature-2](check-space/public/animations/check2.gif)
+![Checklist-feature-2](./public/animations/check2.gif)
 
 Project Description:
 - 'Check Space' is Meeting room booking app with below feature
