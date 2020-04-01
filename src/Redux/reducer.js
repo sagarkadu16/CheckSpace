@@ -6,7 +6,7 @@ const initialState = {
         {  
             id:1,
             floor:1,
-            img:"https://lh3.googleusercontent.com/proxy/AMV6HHq_mV5lbko5ecIgeLeZcZmIcxsssoqvj5vu33u5ev4zfftHjsSRfTsI5SRBJUEveYtOOMDp1Lsrg_T0AXQCOeJcWw5NWq5zmpukimer6a_sSq8",
+            img:"https://www.lottehotel.com/content/dam/lotte-hotel/city/jeju/facilities/business/5350-151125-2000-fac-ltcj.jpg.thumb.768.768.jpg",
             name:'hercules',
             capacity:4,
             price:800,
@@ -56,8 +56,8 @@ const initialState = {
         {  
             id:6,
             floor:3,
-            img:"https://lh3.googleusercontent.com/proxy/AMV6HHq_mV5lbko5ecIgeLeZcZmIcxsssoqvj5vu33u5ev4zfftHjsSRfTsI5SRBJUEveYtOOMDp1Lsrg_T0AXQCOeJcWw5NWq5zmpukimer6a_sSq8",
-            name:'hercules',
+            img:"https://www.shareyouroffice.com/blog-syo/wp-content/uploads/2017/06/IMG_5322_1-e1499956341845.png",
+            name:'warrior',
             capacity:10,
             price:3000,
             bookingLog:[],
@@ -74,7 +74,7 @@ const initialState = {
         {  
             id:1,
             floor:1,
-            img:"https://lh3.googleusercontent.com/proxy/AMV6HHq_mV5lbko5ecIgeLeZcZmIcxsssoqvj5vu33u5ev4zfftHjsSRfTsI5SRBJUEveYtOOMDp1Lsrg_T0AXQCOeJcWw5NWq5zmpukimer6a_sSq8",
+            img:"https://www.lottehotel.com/content/dam/lotte-hotel/city/jeju/facilities/business/5350-151125-2000-fac-ltcj.jpg.thumb.768.768.jpg",
             name:'hercules',
             capacity:4,
             price:800,
@@ -127,8 +127,8 @@ const initialState = {
         {  
             id:6,
             floor:3,
-            img:"https://lh3.googleusercontent.com/proxy/AMV6HHq_mV5lbko5ecIgeLeZcZmIcxsssoqvj5vu33u5ev4zfftHjsSRfTsI5SRBJUEveYtOOMDp1Lsrg_T0AXQCOeJcWw5NWq5zmpukimer6a_sSq8",
-            name:'hercules',
+            img:"https://www.shareyouroffice.com/blog-syo/wp-content/uploads/2017/06/IMG_5322_1-e1499956341845.png",
+            name:'warrior',
             capacity:10,
             price:3000,
             bookingLog:[],
